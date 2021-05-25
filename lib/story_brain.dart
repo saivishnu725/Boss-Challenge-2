@@ -2,8 +2,14 @@ import 'package:boss_two/story.dart';
 import 'package:flutter/material.dart';
 
 class StoryBrain {
-  int storyNumber =
-      0; // Used to track which story the user is currently viewing.
+  int _storyNumber =
+      0;
+
+  int get storyNumber => _storyNumber;
+
+  set storyNumber(int storyNumber) {
+    _storyNumber = storyNumber;
+  } // Used to track which story the user is currently viewing.
   List<Story> _storyData = [
     Story(
         storyTitle:
@@ -77,7 +83,5 @@ class StoryBrain {
     storyNumber = 0;
   }
 }
-
-//TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
 //TODO: Step 27 - Create a method called buttonShouldBeVisible() which checks to see if storyNumber is 0 or 1 or 2 (when both buttons should show choices) and return true if that is the case, else it should return false.
