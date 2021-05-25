@@ -71,8 +71,8 @@ class _StoryPageState extends State<StoryPage> {
                 //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
                 child: FlatButton(
                   onPressed: () {
+                    storyBrain.nextStory(choiceNumber: 2);
                     //Choice 2 made by user.
-                    //TODO: Step 19 - Call the nextStory() method from storyBrain and pass the number 2 as the choice made by the user.
                   },
                   color: Colors.blue,
                   child: Text(
