@@ -23,12 +23,12 @@ class _StoryPageState extends State<StoryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("images/background.png"),
-            fit: BoxFit.fill,
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage("images/background.png"),
+        //     fit: BoxFit.fill,
+        //   ),
+        // ),
         padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
         constraints: BoxConstraints.expand(),
         child: SafeArea(
@@ -50,7 +50,10 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 2,
                 child: FlatButton(
                   onPressed: () {
-                    storyBrain.nextStory(choiceNumber: 1);
+                    debugPrint("Choice 1");
+                    setState(() {
+                      storyBrain.nextStory(choiceNumber: 1);
+                    });
                     //Choice 1 made by user.
                   },
                   color: Colors.red,
@@ -71,7 +74,10 @@ class _StoryPageState extends State<StoryPage> {
                 //TODO: Step 28 - Set the "visible" property of the Visibility Widget to equal the output from the buttonShouldBeVisible() method in the storyBrain.
                 child: FlatButton(
                   onPressed: () {
-                    storyBrain.nextStory(choiceNumber: 2);
+                    debugPrint("Choice 2");
+                    setState(() {
+                      storyBrain.nextStory(choiceNumber: 2);
+                    });
                     //Choice 2 made by user.
                   },
                   color: Colors.blue,

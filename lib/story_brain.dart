@@ -1,4 +1,5 @@
 import 'package:boss_two/story.dart';
+import 'package:flutter/material.dart';
 
 class StoryBrain {
   int storyNumber =
@@ -36,15 +37,15 @@ class StoryBrain {
   ];
 
   String getStory() {
-    return _storyData[0].storyTitle;
+    return _storyData[storyNumber].storyTitle;
   }
 
   String getChoice1() {
-    return _storyData[0].choice1;
+    return _storyData[storyNumber].choice1;
   }
 
   String getChoice2() {
-    return _storyData[0].choice2;
+    return _storyData[storyNumber].choice2;
   }
 
   void nextStory({int choiceNumber}) {
@@ -54,31 +55,28 @@ class StoryBrain {
       } else if (choiceNumber == 2) {
         storyNumber = 1;
       }
-    }
-    if (storyNumber == 2) {
+    } else if (storyNumber == 2) {
       if (choiceNumber == 1) {
         storyNumber = 5;
       } else if (choiceNumber == 2) {
         storyNumber = 4;
       }
-    }
-    if (storyNumber == 1) {
+    } else if (storyNumber == 1) {
       if (choiceNumber == 1) {
         storyNumber = 2;
       } else if (choiceNumber == 2) {
         storyNumber = 3;
       }
-    }
-    if (storyNumber == 3 || storyNumber == 4 || storyNumber == 5) {
+    } else if (storyNumber == 3 || storyNumber == 4 || storyNumber == 5) {
       reset();
     }
+    debugPrint("$storyNumber");
   }
 
   void reset() {
     storyNumber = 0;
   }
 }
-//TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
 
 //TODO: Step 25 - Change the storyNumber property into a private property so that only story_brain.dart has access to it. You can do this by right clicking on the name (storyNumber) and selecting Refactor -> Rename to make the change across all the places where it's used.
 
