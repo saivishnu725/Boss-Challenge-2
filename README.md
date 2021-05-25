@@ -4,7 +4,7 @@ Flutter Angela Yu's course to create boss_two app.
 
 ## Goal
 
-![Finished App](https://github.com/saivishnu725/boss_two/blob/master/Destini.gif)
+![Finished App](https://github.com/saivishnu725/boss_two/blob/master/goal.gif)
 
 ## Install/Run
 
