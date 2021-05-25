@@ -1,7 +1,8 @@
 import 'package:boss_two/story.dart';
 
 class StoryBrain {
-  int storyNumber = 0; // Used to track which story the user is currently viewing.
+  int storyNumber =
+      0; // Used to track which story the user is currently viewing.
   List<Story> _storyData = [
     Story(
         storyTitle:
@@ -45,6 +46,8 @@ class StoryBrain {
   String getChoice2() {
     return _storyData[0].choice2;
   }
+
+  void nextStory({int choiceNumber}) {}
 }
 //TODO: Step 23 - Use the storyNumber property inside getStory(), getChoice1() and getChoice2() so that it gets the updated story and choices rather than always just the first (0th) one.
 
